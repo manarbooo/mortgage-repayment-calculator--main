@@ -1,0 +1,878 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root{
+    --Lime: hsl(61, 70%, 52%);
+    --Red: hsl(4, 69%, 50%);
+    --White: hsl(0, 0%, 100%);
+    --Slate_100: hsl(202, 86%, 94%);
+    --Slate_300: hsl(203, 41%, 72%);
+    --Slate_500: hsl(200, 26%, 54%);
+    --Slate_700: hsl(200, 24%, 40%);
+    --Slate_900: hsl(202, 55%, 16%);
+
+
+}
+
+body{
+    height: 120vh;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Slate_100);
+}
+
+.container{
+    width: 950px;
+    height: 650px;
+    background-color: var(--White);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+}
+
+.calculationDiv{
+    width: 50%;
+    height: 100%;
+    background-color: var(--White);
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.resultDiv{
+    width: 50%;
+    height: 100%;
+    background-color: var(--Slate_900);
+    border-radius: 0 20px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.mainHeading{
+    margin-left: 30px;
+    margin-top: 35px; 
+}
+
+.clearSpan{
+    margin-right: 20px;
+    color: var(--Slate_700);
+    text-decoration: underline;
+    margin-top: 14px;
+
+}
+
+.clearSpan:hover{
+    cursor: pointer;
+}
+
+.calculationHeading{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formGroupe{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.formGroupe1{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3px;
+
+}
+
+.label{
+    font-size: 16px;
+    color: var(--Slate_700);
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+
+}
+
+.amount{
+    width: 75%;
+    height: 45px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    border: 1.4px solid var(--Slate_700);
+    border-radius: 5px;
+    padding-left: 60px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    
+}
+.amount:focus{
+    border: 1.4px solid var(--Lime);
+}
+
+
+
+.amount:focus + .pound{
+    background-color: var(--Lime);
+    
+}
+
+
+.inputContainer{
+    position: relative;
+}
+
+
+.pound{
+    color: var(--Slate_500);
+    font-weight: 700;
+    background-color: var(--Slate_100);
+    width: 10%;
+    height: 47px;
+    border-radius: 4.5px 0 0 4.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    position: absolute;
+    top: 1.3px;
+    left: 21px;
+}
+
+.amount:focus{
+    outline: none;
+}
+
+.errorSpan{
+    color: var(--Red);
+    font-size: 14px;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.formRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: -10px;
+    margin-top: 20px;
+}
+
+.marginleft{
+    margin-left: 0px;
+}
+
+.term{
+    width: 185px;
+    height: 40px;
+    margin-bottom: 5px;
+    border: 1.4px solid var(--Slate_700);
+    border-radius: 5px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    margin-right: -35px;
+    padding-left: 10px;
+}
+
+.term:focus{
+    border: 1.7px solid var(--Lime) !important;
+    outline: none;
+}
+
+.term:focus + .years{
+    background-color: var(--Lime);
+}
+
+
+.interest{
+    width: 190px;
+    height: 40px;
+    margin-bottom: 5px;
+    border: 1.4px solid var(--Slate_700);
+    border-radius: 5px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    padding-left: 10px;
+}
+
+
+
+.interest:focus{
+    border: 1.7px solid var(--Lime) !important; 
+    outline: none;  
+}
+
+.interest:focus + .percent{
+    background-color: var(--Lime);
+}
+
+
+
+.years{
+    color: var(--Slate_500);
+    font-weight: 700;
+    background-color: var(--Slate_100);
+    width: 40%;
+    height: 42px;
+    border-radius: 0 4.5px 4.5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    position: absolute;
+    top: 1.5px;
+    left: 132.5px;
+    pointer-events: none;
+}
+
+.percent{
+    color: var(--Slate_500);
+    font-weight: 700;
+    background-color: var(--Slate_100);
+    width: 26%;
+    height: 42px;
+    border-radius: 0 4.5px 4.5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    position: absolute;
+    top: 1px;
+    left: 150px;
+
+}
+
+.formRadioGroupe{
+    border: none;
+    margin-bottom: 30px;
+    margin-top: 25px;
+}
+
+
+.radioGroupeTitle{
+    color: var(--Slate_700);
+    margin-bottom: 10px;
+}
+
+
+.radioItem{
+    border-radius: 5px;
+    width: 96%;
+    height: 45px;
+    border: 1.4px solid var(--Slate_700);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+
+.label2{
+    color: var(--Slate_900);
+    font-weight: 600;
+}
+
+.repaymentInput , .interestOnlyInput{
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    margin-right: 15px;
+    cursor: Pointer;
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    
+}
+
+.radioItem:hover{
+  border: 1.4px solid var(--Lime);
+  cursor: pointer;
+
+}
+
+.repaymentInput::before, .interestOnlyInput::before{
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 2px solid var(--Slate_700);
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    padding: 5px;
+    top: 0;
+    left: 0;
+}
+
+.radioItem:has(.repaymentInput:checked),
+.radioItem:has(.interestOnlyInput:checked){
+    background-color: hsla(61, 70%, 52%, 0.3);
+    border: 1.4px solid var(--Lime);;
+}
+
+.repaymentInput:checked::before, .interestOnlyInput:checked::before{
+    border: 2px solid var(--Lime);
+}
+
+
+.repaymentInput:checked::after , .interestOnlyInput:checked::after{
+    content: "";
+    display: block;
+    width: 60%;
+    height: 60%;
+    background-color: var(--Lime); 
+    border-radius: 50%;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+
+.errorSpan1{
+  color: var(--Red);
+  font-size: 14px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.invisible{
+    visibility: hidden;
+}
+
+.calculateButton{
+   margin-left: 20px;
+   width: 65%;
+   height: 48px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   border-radius: 25px;
+   border: none;
+   background-color: var(--Lime);
+   font-weight: 600;
+   font-size: 15px;
+   font-family: "Plus Jakarta Sans", sans-serif;
+   color: var(--Slate_900);
+   margin-top: -20px;
+}
+
+.calculateButton:hover{
+    cursor: pointer;
+}
+
+
+.calculatorIcon{
+    margin-left: -20px;
+    margin-right: 10px;
+}
+
+.emptyHeading{
+  color: var(--White);
+}
+
+
+.emptyImg{
+    margin-top: -40px;
+}
+
+
+.emptyDescription{
+    color: var(--Slate_300);
+    font-size: 15px;
+    text-align: center;
+    width: 85%;
+    line-height: 1.5;
+    margin-top: -8px;
+}
+
+
+.resultHeading{
+    color: var(--White);
+    margin-right: auto;
+    margin-left: 30px;
+    margin-top: -80px;
+    margin-bottom: 30px;
+}
+
+.resultDescription{
+    color: var(--Slate_300);
+    font-size: 16px;
+    text-align: left;
+    width: 90%;
+    line-height: 1.5;
+    margin-top: -8px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+}
+
+
+.outputDiv{
+    width: 85%;
+    height: 320px;
+    background-color: hsl(200, 69%, 12%);
+    border-radius: 10px 10px 5px 5px;
+    border-top: 5px solid var(--Lime);
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.firstOutput{
+    color: var(--Slate_300);
+    font-size: 15px;
+    margin-left: 30px;
+    margin-top: 35px;
+}
+
+.firstOutputSpan{
+   color: var(--Lime);
+   font-size: 40px;
+   font-weight: 600;
+   margin-left: 30px;
+}
+
+.divider{
+  width: 90%;
+  height: 1px;
+  background-color: var(--Slate_700);
+  margin: 40px auto;
+  margin-bottom: 20px;
+}
+
+.secondOutput{
+    color: var(--Slate_300);
+    font-size: 15px;
+    margin-left: 30px;
+   
+}
+
+.secondOutputSpan{
+  color: var(--White);
+  margin-left: 30px;
+  font-weight: 600;
+  font-size: 25px;
+
+}
+
+
+@media only screen and (max-width: 883px) {
+
+
+    body{
+        height: 320vh;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--Slate_100);
+    }
+
+    .container{
+        width: 100%;
+        height: 250vh;
+        background-color: var(--White);
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+    }
+    
+    .calculationDiv{
+        width: 100%;
+        height: 150vh;
+        background-color: var(--White);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .resultDiv{
+        width: 100%;
+        height: 120vh;
+        background-color: var(--Slate_900);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
+        
+    }
+    
+    .mainHeading{
+        margin-left: 30px;
+        margin-top: 35px; 
+    }
+    
+    .clearSpan{
+        margin-right: 20px;
+        color: var(--Slate_700);
+        text-decoration: underline;
+        margin-top: 14px;
+    
+    }
+    
+    .clearSpan:hover{
+        cursor: pointer;
+    }
+    
+    .calculationHeading{
+      display: flex;
+      flex-direction: coumn;
+    
+    }
+    
+    .formGroupe{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    
+    }
+    
+    .formGroupe1{
+        display: flex;
+        flex-direction: column;
+        margin-top: 3px;
+        width: 100%;
+    }
+    
+    .label{
+        font-size: 16px;
+        color: var(--Slate_700);
+        margin-left: 20px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    
+    }
+    
+    .amount{
+        width: 75%;
+        height: 45px;
+        margin-left: 20px;
+        margin-bottom: 5px;
+        border: 1.4px solid var(--Slate_700);
+        border-radius: 5px;
+        padding-left: 15%;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        
+    }
+    .amount:focus{
+        border: 1.4px solid var(--Lime);
+    }
+    
+    
+    
+    .amount:focus + .pound{
+        background-color: var(--Lime);
+        
+    }
+    
+    
+    .inputContainer{
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+   
+      
+    
+    
+    .pound{
+        color: var(--Slate_500);
+        font-weight: 700;
+        background-color: var(--Slate_100);
+        width: 10%;
+        height: 86%;
+        border-radius: 4.5px 0 0 4.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 200;
+        position: absolute;
+        top: 1.3px;
+        left: 21px;
+        
+    }
+    
+    .amount:focus{
+        outline: none;
+    }
+    
+    .errorSpan{
+        color: var(--Red);
+        font-size: 14px;
+        margin-left: 20px;
+        font-weight: 500;
+    }
+    
+    .formRow{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+    
+    .marginleft{
+        margin-left: 10px;
+    }
+    
+    .term{
+        width: 90%;
+        height: 40px;
+        margin-bottom: 5px;
+        border: 1.4px solid var(--Slate_700);
+        border-radius: 5px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        margin-left: 10px;
+        padding-left: 10px;
+        
+    }
+    
+    .term:focus{
+        border: 1.7px solid var(--Lime) !important;
+        outline: none;
+    }
+    
+    .term:focus + .years{
+        background-color: var(--Lime);
+    }
+    
+    
+    .interest{
+        width: 90%;
+        height: 40px;
+        margin-bottom: 5px;
+        border: 1.4px solid var(--Slate_700);
+        border-radius: 5px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        padding-left: 10px;
+        margin-left: 10px;
+    }
+    
+    
+    
+    .interest:focus{
+        border: 1.7px solid var(--Lime) !important; 
+        outline: none;  
+    }
+    
+    .interest:focus + .percent{
+        background-color: var(--Lime);
+    }
+    
+    
+    
+    .years{
+        color: var(--Slate_500);
+        font-weight: 700;
+        background-color: var(--Slate_100);
+        width: 15%;
+        height: 42px;
+        border-radius: 0 4.5px 4.5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 200;
+        position: absolute;
+        top: 1.5px;
+        left: 80.3%;
+        pointer-events: none;
+        
+    
+    }
+    
+    .percent{
+        color: var(--Slate_500);
+        font-weight: 700;
+        background-color: var(--Slate_100);
+        width: 14%;
+        height: 42px;
+        border-radius: 0 4.5px 4.5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 200;
+        position: absolute;
+        top: 1.4px;
+        left: 81.3%;
+       
+    
+    }
+    
+    .formRadioGroupe{
+        border: none;
+        margin-bottom: 30px;
+        margin-top: 25px;
+        margin-left: 8px;
+    }
+    
+    .calculateButton{
+        margin-left: 35px;
+        width: 85%;
+        height: 48px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
+        border: none;
+        background-color: var(--Lime);
+        font-weight: 600;
+        font-size: 15px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        color: var(--Slate_900);
+        margin-top: -20px;
+        margin-bottom: 30px;
+     }
+     
+     
+     
+     
+     
+     
+     
+     .emptyImg{
+         margin-top: -40px;
+     }
+     
+     
+     .emptyDescription{
+         color: var(--Slate_300);
+         font-size: 15px;
+         text-align: center;
+         width: 85%;
+         line-height: 1.5;
+         margin-top: -8px;
+     }
+     
+     
+     .resultHeading{
+         color: var(--White);
+         margin-right: auto;
+         margin-left: 30px;
+         margin-top: -80px;
+         margin-bottom: 30px;
+     }
+     
+     .resultDescription{
+         color: var(--Slate_300);
+         font-size: 16px;
+         text-align: left;
+         width: 90%;
+         line-height: 1.5;
+         margin-top: -8px;
+         margin-left: 10px;
+         margin-bottom: 50px;
+     }
+     
+     
+     .outputDiv{
+         width: 85%;
+         height: 320px;
+         background-color: hsl(200, 69%, 12%);
+         border-radius: 10px 10px 5px 5px;
+         border-top: 5px solid var(--Lime);
+         display: flex;
+         flex-direction: column;
+         
+     }
+     
+     
+     
+     .firstOutput{
+         color: var(--Slate_300);
+         font-size: 15px;
+         margin-left: 30px;
+         margin-top: 35px;
+     }
+     
+     .firstOutputSpan{
+        color: var(--Lime);
+        font-size: 40px;
+        font-weight: 600;
+        margin-left: 30px;
+     }
+     
+     .divider{
+       width: 90%;
+       height: 1px;
+       background-color: var(--Slate_700);
+       margin: 40px auto;
+       margin-bottom: 20px;
+     }
+     
+     .secondOutput{
+         color: var(--Slate_300);
+         font-size: 15px;
+         margin-left: 30px;
+        
+     }
+     
+     .secondOutputSpan{
+       color: var(--White);
+       margin-left: 30px;
+       font-weight: 600;
+       font-size: 25px;
+     
+     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+@media (min-width: 596px) and (max-width: 883px) {
+
+    .years{
+        
+        left: 78.5%;
+        
+        
+    
+    }
+    
+    .percent{
+        
+        left: 79.6%;
+       
+    
+    }
+
+}
+
+
+@media (min-width: 596px) and (max-width: 862px) {
+
+    .years{
+        
+        left: 78%;
+    
+    }
+    
+    .percent{
+        
+        left: 79%;
+       
+    
+    }
+
+}
